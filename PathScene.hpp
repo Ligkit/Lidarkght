@@ -11,6 +11,7 @@
 #include"Funcmenu.hpp"
 #include"FPS.hpp"
 #include"PohotScene.hpp"
+#include"AchievementNotice.hpp"
 #define DISTANCE 650	//两扇门之间的距离
 #define SCALEofDOOR 0.5f	//门的缩放大小
 
@@ -26,9 +27,9 @@ protected:
 	//Sprite* line = gcnew Sprite(L"res/img/line.png");
 	Sprite* wall = gcnew Sprite(L"res/img/wall.png");
 	float speed = 0;	//速度
-	const float maxSpeed = 8;	//最大速度  (6)
-	const float accel = 0.75f;	//加速度   (0.25f)
-	const float friction = 0.1f;	//摩擦力 (0.05f)
+	const float maxSpeed = 7;	//最大速度  (6)
+	const float accel = 0.7f;	//加速度   (0.25f)
+	const float friction = 0.075f;	//摩擦力 (0.05f)
 
 	Sprite* photoframe1 = gcnew Sprite(L"res/img/photoframe.png");
 	Sprite* photoframe2 = gcnew Sprite(L"res/img/photoframe.png");
@@ -230,11 +231,17 @@ public:
 		{
 			std::cout << "LeftBoundary" << std::endl;
 			speed = -speed;
+			//成就(已优化)
+			AchievementNotice* achievement = gcnew AchievementNotice(L"撞墙");
+			this->addChild(achievement);
 		}
-		if (otherBoorBtn->getPosX() < 300)
+		if (otherBoorBtn->getPosX() < 200)
 		{
 			std::cout << "RightBoundary" << std::endl;
 			speed = -speed;
+			//成就(已优化)
+			AchievementNotice* achievement = gcnew AchievementNotice(L"撞墙");
+			this->addChild(achievement);
 		}
 
 		if (fabs(speed) <= 0.1)
