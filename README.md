@@ -7,7 +7,7 @@ Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D�
 
 本游戏分为`13`个场景.
 
-![1](README\img\1.png)
+![1](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/1.png)
 
 ## Tip
 
@@ -31,13 +31,13 @@ Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D�
 
 
 
-![2](README\img\2.png)
+![2](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/2.png)
 
-![3](README\img\3.png)
+![3](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/3.png)
 
-![4](README\img\4.png)
+![4](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/4.png)
 
-![9](README\img\9.png)
+![9](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/9.png)
 
 > 注: 部分游戏素材来源于网络
 
@@ -45,4 +45,4 @@ Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D�
 
 ## 开发实况
 
-![10](README\img\10.png)
+![10](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/10.png)
