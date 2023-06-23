@@ -10,13 +10,11 @@ using namespace easy2d;
 
 int main()
 {
-	//Logger::showConsole(false);	//隐藏控制台窗口
-	
-	Window::setSize(800, 600);	//设置窗口大小
-
 	if (Game::init())
 	{
 		Window::setTitle(L"Lidarkght");	//设置窗口标题
+		//Logger::showConsole(false);	//隐藏控制台窗口
+		Window::setSize(640, 480);	//设置窗口大小
 
 		auto bgmusic1 = MusicPlayer::preload(L"res/msc/Windy Hill.mp3"); //或: 花火が瞬く夜に.mp3
 		if (bgmusic1)
