@@ -46,3 +46,7 @@ Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D�
 ## 开发实况
 
 ![10](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/10.png)
+
+## 其他
+由于Easy2D游戏引擎额外需要部分动态链接库, 编译后请将以下.dll文件复制到可执行文件的同目录下
+![11](https://github.com/LitStudio-Center/Lidarkght/blob/main/README/img/11.png)
