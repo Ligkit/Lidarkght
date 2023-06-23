@@ -3,6 +3,11 @@
 #include"AchievementNotice.hpp"
 #include"FPS.hpp"
 
+#include<stdio.h>
+#include<windows.h>
+#include<mmsystem.h>
+#pragma comment(lib, "winmm.lib")
+
 #define qdo 262	//q前缀为低音，1后缀为高音，s前缀为半音阶
 #define qre 294
 #define qmi 330
@@ -149,131 +154,189 @@ public:
 		if (Input::isDown(KeyCode::A))
 		{
 			std::cout << "do" << std::endl;
-			Beep(do_, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(1), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::S))
 		{
 			std::cout << "re" << std::endl;
-			Beep(re, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(2), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::D))
 		{
 			std::cout << "mi" << std::endl;
-			Beep(mi, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(3), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::F))
 		{
 			std::cout << "fa" << std::endl;
-			Beep(fa, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(4), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::J))
 		{
 			std::cout << "so" << std::endl;
-			Beep(so, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(5), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::K))
 		{
 			std::cout << "la" << std::endl;
-			Beep(la, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(6), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::L))
 		{
 			std::cout << "si" << std::endl;
-			Beep(si, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(7), NULL, NULL);
 		}
 
 		if (Input::isDown(KeyCode::Q))
 		{
 			std::cout << "do1" << std::endl;
-			Beep(do1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(11), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::W))
 		{
 			std::cout << "re1" << std::endl;
-			Beep(re1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(12), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::E))
 		{
 			std::cout << "mi1" << std::endl;
-			Beep(mi1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(13), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::R))
 		{
 			std::cout << "fa1" << std::endl;
-			Beep(fa1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(14), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::U))
 		{
 			std::cout << "so1" << std::endl;
-			Beep(so1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(15), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::I))
 		{
 			std::cout << "la1" << std::endl;
-			Beep(la1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(16), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::O))
 		{
 			std::cout << "si1" << std::endl;
-			Beep(si1, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(17), NULL, NULL);
 		}
 
 		if (Input::isDown(KeyCode::Z))
 		{
 			std::cout << "qdo" << std::endl;
-			Beep(qdo, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-1), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::X))
 		{
 			std::cout << "qre" << std::endl;
-			Beep(qre, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-2), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::C))
 		{
 			std::cout << "qmi" << std::endl;
-			Beep(qmi, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-3), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::V))
 		{
 			std::cout << "qfa" << std::endl;
-			Beep(qfa, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-4), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::B))
 		{
 			std::cout << "qso" << std::endl;
-			Beep(qso, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-5), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::N))
 		{
 			std::cout << "qla" << std::endl;
-			Beep(qla, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-6), NULL, NULL);
 		}
 		if (Input::isDown(KeyCode::M))
 		{
 			std::cout << "qsi" << std::endl;
-			Beep(qsi, BEEPTIME);
-			Sleep(SLEEPTIME);
+			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)playMusic, (LPVOID)(-7), NULL, NULL);
 		}
+	}
+
+	static void playMusic(int n)
+	{
+		switch (n)
+		{
+		case 1:
+			mciSendString(L"open res/msc/piano/a.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 2:
+			mciSendString(L"open res/msc/piano/s.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 3:
+			mciSendString(L"open res/msc/piano/d.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 4:
+			mciSendString(L"open res/msc/piano/f.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 5:
+			mciSendString(L"open res/msc/piano/j.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 6:
+			mciSendString(L"open res/msc/piano/k.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 7:
+			mciSendString(L"open res/msc/piano/l.mp3 alias m", NULL, NULL, NULL);
+			break;
+
+		case 11:
+			mciSendString(L"open res/msc/piano/q.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 12:
+			mciSendString(L"open res/msc/piano/w.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 13:
+			mciSendString(L"open res/msc/piano/e.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 14:
+			mciSendString(L"open res/msc/piano/r.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 15:
+			mciSendString(L"open res/msc/piano/u.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 16:
+			mciSendString(L"open res/msc/piano/i.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case 17:
+			mciSendString(L"open res/msc/piano/o.mp3 alias m", NULL, NULL, NULL);
+			break;
+
+		case -1:
+			mciSendString(L"open res/msc/piano/z.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -2:
+			mciSendString(L"open res/msc/piano/x.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -3:
+			mciSendString(L"open res/msc/piano/c.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -4:
+			mciSendString(L"open res/msc/piano/v.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -5:
+			mciSendString(L"open res/msc/piano/b.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -6:
+			mciSendString(L"open res/msc/piano/n.mp3 alias m", NULL, NULL, NULL);
+			break;
+		case -7:
+			mciSendString(L"open res/msc/piano/m.mp3 alias m", NULL, NULL, NULL);
+			break;
+
+		default:
+			break;
+		}
+		mciSendString(L"play m", NULL, NULL, NULL);
+		Sleep(2000);
+		mciSendString(L"close m", NULL, NULL, NULL);
+		
 	}
 
 };

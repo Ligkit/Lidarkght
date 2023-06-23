@@ -9,12 +9,13 @@ using namespace easy2d;
 class MusicroomScene : public Sprite
 {
 protected:
+	//定义, 初始化
 	Sprite* backgroundImg = gcnew Sprite(L"res/img/musicroom.png");
 
 public:
 	MusicroomScene()
 	{
-		Renderer::setBackgroundColor(Color::White);
+		Renderer::setBackgroundColor(Color::White);	//设置背景颜色: 白色
 
 		MusicPlayer::resumeAll();
 
