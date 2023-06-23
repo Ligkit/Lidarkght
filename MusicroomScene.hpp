@@ -55,7 +55,7 @@ public:
 			{
 				std::cout << "OutersideScene" << std::endl;
 				auto scene9 = gcnew Scene;
-				OutsideScene* outsidescene = gcnew OutsideScene;
+				OutsideScene* outsidescene = gcnew OutsideScene(2);
 				scene9->addChild(outsidescene);
 				SceneManager::enter(scene9);
 			}
