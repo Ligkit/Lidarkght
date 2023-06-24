@@ -14,6 +14,7 @@
 #include"AchievementNotice.hpp"
 #define DISTANCE 650	//两扇门之间的距离
 #define SCALEofDOOR 0.5f	//门的缩放大小
+#define DELETASPEED 1.1f
 
 using namespace easy2d;
 class PathScene : public Sprite
@@ -50,6 +51,13 @@ protected:
 	Button* leftBtn = nullptr;
 	Text* rightTxt = gcnew Text;
 	Text* leftTxt = gcnew Text;
+
+	Sprite* plant = gcnew Sprite(L"res/img/plant.png");
+	Sprite* plant1 = gcnew Sprite(L"res/img/plant1.png");
+	Sprite* plant2 = gcnew Sprite(L"res/img/plant2.png");
+	Sprite* plant3 = gcnew Sprite(L"res/img/plant3.png");
+	Sprite* plant4 = gcnew Sprite(L"res/img/plant4.png");
+	Sprite* plant5 = gcnew Sprite(L"res/img/plant3.png");
 
 public:
 	PathScene()
@@ -132,7 +140,7 @@ public:
 		photo1Btn->setPos(330, 90);
 		auto photofunc1 = std::bind(&PathScene::displayPhoto1, this);
 		photo1Btn->setClickFunc(photofunc1);
-		this->addChild(photo1Btn);
+		
 
 		photoframe2->crop(Rect(530, 0, 932, 586));
 		photoframe2->setScale(0.3f);
@@ -140,7 +148,7 @@ public:
 		photo2Btn->setPos(580, 140);
 		auto photofunc2 = std::bind(&PathScene::displayPhoto2, this);
 		photo2Btn->setClickFunc(photofunc2);
-		this->addChild(photo2Btn);
+		
 
 		photoframe3->crop(Rect(40, 420, 393, 798));
 		photoframe3->setScale(0.35f);
@@ -148,15 +156,15 @@ public:
 		photo3Btn->setPos(990, 140);
 		auto photofunc3 = std::bind(&PathScene::displayPhoto3, this);
 		photo3Btn->setClickFunc(photofunc3);
-		this->addChild(photo3Btn);
+		
 
 		photoframe4->crop(Rect(460, 590, 904, 859));
 		photoframe4->setScale(0.35f);
 		photo4Btn = gcnew Button(photoframe4);
-		photo4Btn->setPos(1160, 220);
+		photo4Btn->setPos(1160, 240);
 		auto photofunc4 = std::bind(&PathScene::displayPhoto4, this);
 		photo4Btn->setClickFunc(photofunc4);
-		this->addChild(photo4Btn);
+		
 
 		photoframe5->crop(Rect(0, 0, 511, 409));
 		photoframe5->setScale(0.3f);
@@ -164,37 +172,73 @@ public:
 		photo5Btn->setPos(1342, 145);
 		auto photofunc5 = std::bind(&PathScene::displayPhoto5, this);
 		photo5Btn->setClickFunc(photofunc5);
-		this->addChild(photo5Btn);
+		
 		
 		photo1->setAnchor(0.5f, 0.5f);
-		photo1->setScale(0.35f);
+		photo1->setScaleY(0.10f);
+		photo1->setScaleX(0.13f);
 		photo1->setPosX(photo1Btn->getPosX() + 70);
 		photo1->setPosY(photo1Btn->getPosY() + 80);
 		this->addChild(photo1);
+		this->addChild(photo1Btn);
 
 		photo2->setAnchor(0.5f, 0.5f);
 		photo2->setScale(0.35f);
 		photo2->setPosX(photo2Btn->getPosX() + 70);
 		photo2->setPosY(photo2Btn->getPosY() + 80);
 		this->addChild(photo2);
+		this->addChild(photo2Btn);
 
 		photo3->setAnchor(0.5f, 0.5f);
 		photo3->setScale(0.35f);
 		photo3->setPosX(photo3Btn->getPosX() + 70);
 		photo3->setPosY(photo3Btn->getPosY() + 80);
 		this->addChild(photo3);
+		this->addChild(photo3Btn);
 
 		photo4->setAnchor(0.5f, 0.5f);
 		photo4->setScale(0.35f);
 		photo4->setPosX(photo4Btn->getPosX() + 70);
 		photo4->setPosY(photo4Btn->getPosY() + 80);
 		this->addChild(photo4);
+		this->addChild(photo4Btn);
 
 		photo5->setAnchor(0.5f, 0.5f);
 		photo5->setScale(0.35f);
 		photo5->setPosX(photo5Btn->getPosX() + 70);
 		photo5->setPosY(photo5Btn->getPosY() + 80);
 		this->addChild(photo5);
+		this->addChild(photo5Btn);
+
+		plant->setAnchor(0.5f, 0.5f);
+		plant->setScale(0.35f);
+		plant->setPos(0, 350);
+		this->addChild(plant);
+
+		plant1->setAnchor(0.5f, 0.5f);
+		plant1->setScale(0.3f);
+		plant1->setPos(450, 340);
+		this->addChild(plant1);
+
+		plant2->setAnchor(0.5f, 0.5f);
+		plant2->setScale(0.7f);
+		plant2->setPos(1575, 258);
+		this->addChild(plant2);
+
+		plant3->setAnchor(0.5f, 0.5f);
+		plant3->setScale(0.7f);
+		plant3->setPos(1226, 180);
+		this->addChild(plant3);
+
+		plant4->setAnchor(0.5f, 0.5f);
+		plant4->setScale(0.05f);
+		plant4->setPos(1100, 360);
+		this->addChild(plant4);
+
+		plant5->setAnchor(0.5f, 0.5f);
+		plant5->setScale(0.7f);
+		plant5->setPos(-140, 150);
+		this->addChild(plant5);
 
 		//菜单栏(已优化)
 		auto PathSceneMenu = gcnew Funcmenu;
@@ -269,6 +313,13 @@ public:
 		photo3->movePosX(speed);
 		photo4->movePosX(speed);
 		photo5->movePosX(speed);
+
+		plant->movePosX(speed * DELETASPEED);
+		plant1->movePosX(speed * DELETASPEED);
+		plant2->movePosX(speed);
+		plant3->movePosX(speed);
+		plant4->movePosX(speed * DELETASPEED);
+		plant5->movePosX(speed);
 
 	}
 

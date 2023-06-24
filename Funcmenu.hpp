@@ -37,7 +37,7 @@ public:
 		menuPanel->setPos(menuBtn->getPosX(), menuBtn->getPosY() + 70);	//设置坐标
 		menuPanel->setScaleX(0.13f);	//缩放
 		menuPanel->setScaleY(0.5f);
-		menuPanel->setOpacity(0.3f);	//设置菜单面板透明度
+		menuPanel->setOpacity(0.4f);	//设置菜单面板透明度
 		this->addChild(menuPanel);	//添加子节点
 		menuPanel->setVisible(false);	//隐藏
 
@@ -90,6 +90,7 @@ public:
 			backBtn->setVisible(false);
 			quitBtn->setVisible(false);
 			bgmusicBtn->setVisible(false);
+
 		}
 		else	//否则(菜单没有展开)
 		{
@@ -98,6 +99,7 @@ public:
 			backBtn->setVisible(true);
 			quitBtn->setVisible(true);
 			bgmusicBtn->setVisible(true);
+
 		}
 	}
 

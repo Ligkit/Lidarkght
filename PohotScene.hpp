@@ -32,16 +32,11 @@ public:
 		wall->setHeight(Window::getHeight());
 		this->addChild(wall);
 
-		//菜单栏(已优化)
-		auto PathSceneMenu = gcnew Funcmenu;
-		this->addChild(PathSceneMenu);
-
-		//fps(已优化)
-		auto fps = gcnew FPS;
-		this->addChild(fps);
+		
 
 		photoframe1->crop(Rect(0, 0, 511, 409));
-		photoframe1->setScale(0.3f * PHOTOSCALETIME);
+		photoframe1->setScaleX(0.33f * PHOTOSCALETIME);
+		photoframe1->setScaleY(0.35f * PHOTOSCALETIME);
 		photoframe1->setAnchor(0.5f, 0.5f);
 		photoframe1->setPosX(Window::getWidth() / 2 + 12);
 		photoframe1->setPosY(Window::getHeight() / 2 - 70);
@@ -71,7 +66,8 @@ public:
 		photoframe5->setPosY(Window::getHeight() / 2 - 70);
 
 		photo1->setAnchor(0.5f, 0.5f);
-		photo1->setScale(1.5f);
+		photo1->setScaleY(0.41f);
+		photo1->setScaleX(0.50f);
 		photo1->setPosX(photoframe1->getPosX() - 10);
 		photo1->setPosY(photoframe1->getPosY() + 70);
 
@@ -120,5 +116,13 @@ public:
 			this->addChild(photo5);
 			this->addChild(photoframe5);
 		}
+
+		//菜单栏(已优化)
+		auto PathSceneMenu = gcnew Funcmenu;
+		this->addChild(PathSceneMenu);
+
+		//fps(已优化)
+		auto fps = gcnew FPS;
+		this->addChild(fps);
 	}
 };

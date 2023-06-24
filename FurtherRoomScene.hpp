@@ -47,5 +47,6 @@ public:
 				SceneManager::enter(scene13);	//ÇÐ»»ÎªOutsideScene³¡¾°
 			}
 		}
+		
 	}
 };
