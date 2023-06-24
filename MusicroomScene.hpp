@@ -17,7 +17,7 @@ public:
 	{
 		Renderer::setBackgroundColor(Color::White);	//ÉèÖÃ±³¾°ÑÕÉ«: °×É«
 
-		MusicPlayer::resumeAll();
+		//MusicPlayer::resumeAll();
 
 		backgroundImg->setAnchor(0.5f, 0.5f);
 		backgroundImg->setPosX(Window::getWidth() / 2);
@@ -56,7 +56,7 @@ public:
 			{
 				std::cout << "OutersideScene" << std::endl;
 				auto scene9 = gcnew Scene;
-				OutsideScene* outsidescene = gcnew OutsideScene(2);
+				OutsideScene* outsidescene = gcnew OutsideScene(3);
 				scene9->addChild(outsidescene);
 				SceneManager::enter(scene9);
 			}

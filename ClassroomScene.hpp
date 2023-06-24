@@ -18,6 +18,7 @@ protected:
 public:
 	ClassroomScene()
 	{
+		//CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)openingDoorMucis, (LPVOID)(1), NULL, NULL);
 		Renderer::setBackgroundColor(Color::White); //设置背景颜色: 白色
 
 		backgroundImg->setAnchor(0.5f, 0.5f);	//设置锚点
@@ -86,4 +87,12 @@ public:
 			}
 		}
 	}
+
+	/*static void openingDoorMucis()
+	{
+		mciSendString(L"open res/msc/openingDoor.mp3 alias m", NULL, NULL, NULL);
+		mciSendString(L"play m", NULL, NULL, NULL);
+		Sleep(2000);
+		mciSendString(L"close m", NULL, NULL, NULL);
+	}*/
 };

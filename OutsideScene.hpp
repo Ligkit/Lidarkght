@@ -36,6 +36,12 @@ public:
 			AchievementNotice* achievement = gcnew AchievementNotice(L"还是这里");
 			this->addChild(achievement);
 		}
+		if (order == 3)
+		{
+			//成就(已优化)
+			AchievementNotice* achievement = gcnew AchievementNotice(L"又是这里");
+			this->addChild(achievement);
+		}
 
 		//fps(已优化)
 		auto fps = gcnew FPS;

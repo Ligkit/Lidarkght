@@ -275,7 +275,6 @@ public:
 	void changeToClassroom() //ÇÐ»»ÎªClassroomScene³¡¾°
 	{
 		std::cout << "Classroom" << std::endl;
-		/*openingDoorMucis();*/
 		auto scene3 = gcnew Scene;
 		ClassroomScene* classscene = gcnew ClassroomScene;
 		scene3->addChild(classscene);
@@ -351,11 +350,11 @@ public:
 		speed += accel * 10;
 	}
 
-	//void openingDoorMucis()
-	//{
-	//	/*mciSendString(L"open res/msc/openingDoor.mp3 alias m", NULL, NULL, NULL);
-	//	mciSendString(L"play m", NULL, NULL, NULL);*/
-	//	//Sleep(2000);
-	//	//mciSendString(L"close res/msc/openingDoor.mp3", NULL, NULL, NULL);
-	//}
+	/*static void openingDoorMucis()
+	{
+		mciSendString(L"open res/msc/openingDoor.mp3 alias m", NULL, NULL, NULL);
+		mciSendString(L"play m", NULL, NULL, NULL);
+		Sleep(2000);
+		mciSendString(L"close m", NULL, NULL, NULL);
+	}*/
 };
