@@ -3,7 +3,7 @@
 
 ## 游戏介绍
 
-Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D游戏引擎的C++语言编写而成.
+Lidarkght是由Lit Studio团队开发的一款开源小游戏, 由基于Easy2D(V2.0.28)游戏引擎的C++语言编写而成.
 
 本游戏分为`13`个场景.
 
