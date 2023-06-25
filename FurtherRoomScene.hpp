@@ -29,13 +29,17 @@ public:
 		//fps(已优化)
 		auto fps = gcnew FPS;
 		this->addChild(fps);
+
+		this->setOpacity(0.0f);
+		auto fadein = gcnew FadeIn(1.25f);
+		this->runAction(fadein);
 	}
 
 	void onUpdate()
 	{
 		if (Input::isDown(MouseCode::Left))	//如果鼠标点击
 		{
-			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;
+			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;	//调试文本
 
 			if (26 <= Input::getMouseX() && Input::getMouseX() <= 168
 				&& 91 <= Input::getMouseY() && Input::getMouseY() <= 206)	//如果鼠标坐标满足窗户区域

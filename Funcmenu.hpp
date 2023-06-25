@@ -3,8 +3,8 @@
 #include<iostream>
 #include <windows.h> 
 #include<cstdio> 
-using namespace easy2d;
 
+using namespace easy2d;
 class Funcmenu : public Sprite
 {
 protected:
@@ -83,6 +83,7 @@ public:
 	void menuOn()
 	{
 		std::cout << "Menu is clicked" << std::endl;	//调试文本
+
 		if (menuPanel->isVisible())	//如果菜单已经展开
 		{
 			//全部隐藏
@@ -106,6 +107,7 @@ public:
 	inline void back()	//返回
 	{
 		std::cout << "back" << std::endl;	//调试文本
+
 		SceneManager::back();	//返回上一个场景
 	}
 
@@ -123,11 +125,13 @@ public:
 		if (bgmusicBtn->getState())	//如果按钮处于开状态
 		{
 			std::cout << "bgmusic on" << std::endl;	//调试文本
+
 			MusicPlayer::resumeAll();	//继续播放所有音乐
 		}
 		else	//否则(按钮处于关状态)
 		{
 			std::cout << "bgmusic off" << std::endl;	//调试文本
+
 			MusicPlayer::pauseAll();	//暂停所有音乐
 		}
 	}

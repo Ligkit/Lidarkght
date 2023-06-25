@@ -17,14 +17,16 @@ public:
 		finaldialog->setPosY(Window::getHeight() / 2);
 		finaldialog->setColor(Color::Black);	//设置文本颜色
 		finaldialog->setFontSize(30);	//设置文本大小
-		this->addChild(finaldialog);
+		finaldialog->setOpacity(0.0f);	//设置透明度
+		this->addChild(finaldialog);	//添加子节点
 
 		auto seq = gcnew Sequence;	//定义顺序动作
+		auto fadein = gcnew FadeIn(1.5f);	//淡入
 		auto delay1 = gcnew Delay(1.5f);	//停留
 		auto fadeout = gcnew FadeOut(1.5f);	//淡出动作
 		auto delay2 = gcnew Delay(2.5f);	//停留
 		auto call = gcnew CallFunc(std::bind(&FinalScene::end, this));	//回调
-		seq->add({ delay1, fadeout, delay2, call });	//初始化顺序动作
+		seq->add({ fadein, delay1, fadeout, delay2, call });	//初始化顺序动作
 		finaldialog->runAction(seq);	//执行动作
 
 		//成就(已优化)

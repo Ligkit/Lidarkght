@@ -2,7 +2,6 @@
 #include<easy2d/easy2d.h>
 #include"Funcmenu.hpp"
 #include"FPS.hpp"
-#define PHOTOSCALETIME 4
 
 using namespace easy2d;
 class PhotoScene : public Sprite
@@ -24,73 +23,79 @@ public:
 	PhotoScene(int order)
 	{
 		//墙壁贴图
-		wall->crop(Rect(0, 0, 50, 170));
-		wall->setAnchor(0.5f, 0.5f);
-		wall->setPosX(Window::getWidth() / 2);
+		wall->crop(Rect(0, 0, 50, 170));	//裁剪
+		wall->setAnchor(0.5f, 0.5f);	//设置锚点
+		wall->setPosX(Window::getWidth() / 2);	//居中
 		wall->setPosY(Window::getHeight() / 2);
-		wall->setWidth(Window::getWidth());
+		wall->setWidth(Window::getWidth());	//缩放至整个窗口
 		wall->setHeight(Window::getHeight());
-		this->addChild(wall);
+		this->addChild(wall);	//添加子节点
 
-		
-
-		photoframe1->crop(Rect(0, 0, 511, 409));
-		photoframe1->setScaleX(0.33f * PHOTOSCALETIME);
-		photoframe1->setScaleY(0.35f * PHOTOSCALETIME);
-		photoframe1->setAnchor(0.5f, 0.5f);
-		photoframe1->setPosX(Window::getWidth() / 2 + 12);
+		//相框, 照片
+#if true
+		photoframe1->crop(Rect(0, 0, 511, 409));	//裁剪
+		photoframe1->setScaleX(1.32f);	//缩放
+		photoframe1->setScaleY(1.4f);
+		photoframe1->setAnchor(0.5f, 0.5f);	//设置锚点
+		photoframe1->setPosX(Window::getWidth() / 2 + 12);	//设置坐标
 		photoframe1->setPosY(Window::getHeight() / 2 - 70);
 
-		photoframe2->crop(Rect(530, 0, 932, 586));
-		photoframe2->setScale(0.3f * 2.75f);
-		photoframe2->setAnchor(0.5f, 0.5f);
-		photoframe2->setPosX(Window::getWidth() / 2 + 50);
-		photoframe2->setPosY(Window::getHeight() / 2 - 5);
+		photoframe2->crop(Rect(530, 0, 932, 586));	//裁剪
+		photoframe2->setScaleY(0.9625f);	//缩放
+		photoframe2->setScaleX(1.2375f);
+		photoframe2->setAnchor(0.5f, 0.5f);	//设置锚点
+		photoframe2->setPosX(Window::getWidth() / 2 + 90);	//设置坐标
+		photoframe2->setPosY(Window::getHeight() / 2 - 50);
 
-		photoframe3->crop(Rect(40, 420, 393, 798));
-		photoframe3->setScale(0.35f * 3.25);
-		photoframe3->setAnchor(0.5f, 0.5f);
-		photoframe3->setPosX(Window::getWidth() / 2 + 41);
+		photoframe3->crop(Rect(40, 420, 393, 798));	//裁剪
+		photoframe3->setScaleY(1.1375f);	//缩放
+		photoframe3->setScaleX(1.365f);
+		photoframe3->setAnchor(0.5f, 0.5f);	//设置锚点
+		photoframe3->setPosX(Window::getWidth() / 2 + 60);	//设置坐标
 		photoframe3->setPosY(Window::getHeight() / 2 + 37);
 
-		photoframe4->crop(Rect(460, 590, 904, 859));
-		photoframe4->setScale(0.35f * 3.75);
-		photoframe4->setAnchor(0.5f, 0.5f);
-		photoframe4->setPosX(Window::getWidth() / 2 + 100);
+		photoframe4->crop(Rect(460, 590, 904, 859));	//裁剪
+		photoframe4->setScale(1.3125f);	//缩放
+		photoframe4->setAnchor(0.5f, 0.5f);	//设置锚点
+		photoframe4->setPosX(Window::getWidth() / 2 + 100);	//设置坐标
 		photoframe4->setPosY(Window::getHeight() / 2);
 		
-		photoframe5->crop(Rect(0, 0, 511, 409));
-		photoframe5->setScale(0.3f * PHOTOSCALETIME);
-		photoframe5->setAnchor(0.5f, 0.5f);
-		photoframe5->setPosX(Window::getWidth() / 2 + 12);
+		photoframe5->crop(Rect(0, 0, 511, 409));	//裁剪
+		photoframe5->setScale(1.2f);	//缩放
+		photoframe5->setAnchor(0.5f, 0.5f);	//设置锚点
+		photoframe5->setPosX(Window::getWidth() / 2 + 12);	//设置坐标
 		photoframe5->setPosY(Window::getHeight() / 2 - 70);
 
-		photo1->setAnchor(0.5f, 0.5f);
-		photo1->setScaleY(0.41f);
+		photo1->setAnchor(0.5f, 0.5f);	//设置锚点
+		photo1->setScaleY(0.41f);	//缩放
 		photo1->setScaleX(0.50f);
-		photo1->setPosX(photoframe1->getPosX() - 10);
+		photo1->setPosX(photoframe1->getPosX() - 10);	//设置坐标
 		photo1->setPosY(photoframe1->getPosY() + 70);
 
-		photo2->setAnchor(0.5f, 0.5f);
-		photo2->setScale(1.5f);
-		photo2->setPosX(photoframe2->getPosX() - 10);
-		photo2->setPosY(photoframe2->getPosY() + 70);
+		photo2->setAnchor(0.5f, 0.5f);	//设置锚点
+		photo2->setScaleY(0.6f);	//缩放
+		photo2->setScaleX(0.52f);
+		photo2->setPosX(photoframe2->getPosX() - 80);	//设置坐标
+		photo2->setPosY(photoframe2->getPosY() + 65);
 
-		photo3->setAnchor(0.5f, 0.5f);
-		photo3->setScale(1.5f);
-		photo3->setPosX(photoframe3->getPosX() - 10);
+		photo3->setAnchor(0.5f, 0.5f);	//设置锚点
+		photo3->setScale(1.5f);	//缩放
+		photo3->setPosX(photoframe3->getPosX() - 10);	//设置坐标
 		photo3->setPosY(photoframe3->getPosY() + 70);
 
-		photo4->setAnchor(0.5f, 0.5f);
-		photo4->setScale(1.5f);
-		photo4->setPosX(photoframe4->getPosX() - 10);
+		photo4->setAnchor(0.5f, 0.5f);	//设置锚点
+		photo4->setScale(1.5f);	//缩放
+		photo4->setPosX(photoframe4->getPosX() - 10);	//设置坐标
 		photo4->setPosY(photoframe4->getPosY() + 70);
 
-		photo5->setAnchor(0.5f, 0.5f);
-		photo5->setScale(1.5f);
-		photo5->setPosX(photoframe5->getPosX() - 10);
+		photo5->setAnchor(0.5f, 0.5f);	//设置锚点
+		photo5->setScale(1.5f);	//缩放
+		photo5->setPosX(photoframe5->getPosX() - 10);	//设置坐标
 		photo5->setPosY(photoframe5->getPosY() + 70);
-		
+#endif
+
+		//添加子节点
+#if true
 		if (order == 1)
 		{
 			this->addChild(photo1);
@@ -116,6 +121,7 @@ public:
 			this->addChild(photo5);
 			this->addChild(photoframe5);
 		}
+#endif
 
 		//菜单栏(已优化)
 		auto PathSceneMenu = gcnew Funcmenu;
@@ -124,5 +130,13 @@ public:
 		//fps(已优化)
 		auto fps = gcnew FPS;
 		this->addChild(fps);
+	}
+
+	void onUpdate()
+	{
+		if (Input::isDown(MouseCode::Left))	//如果点击鼠标左键
+		{
+			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;	//调试文本
+		}
 	}
 };

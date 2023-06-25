@@ -26,7 +26,11 @@ public:
 		backgroundImg->setPosY(Window::getHeight() / 2);
 		backgroundImg->setScaleX(Window::getWidth() / backgroundImg->getWidth());	//缩放至整个窗口
 		backgroundImg->setScaleY(Window::getHeight() / backgroundImg->getHeight());
+		backgroundImg->setOpacity(0.0f);	//透明度
 		this->addChild(backgroundImg);	//添加子节点
+
+		auto fadein = gcnew FadeIn(1.25f);	//淡入
+		backgroundImg->runAction(fadein);	//执行动作
 
 		//菜单栏(已优化)
 		auto ClassroomSceneMenu = gcnew Funcmenu;
@@ -41,12 +45,14 @@ public:
 	{
 		if (Input::isDown(MouseCode::Left))	//如果鼠标点击
 		{
-			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;
+			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;	//调试文本
+
 			if (270 <= Input::getMouseX() && Input::getMouseX() <= 379
 				&& 207 <= Input::getMouseY() && Input::getMouseY() <= 281)	//如果鼠标坐标满足黑板区域
 			{
 				//切换为BlackboardScene场景
 				std::cout << "Blackboard" << std::endl;	//调试文本
+
 				auto scene5 = gcnew Scene;	//新建场景
 				BlackboardScene* blackboardscene = gcnew BlackboardScene;	//初始化场景
 				scene5->addChild(blackboardscene); //添加场景
@@ -58,6 +64,7 @@ public:
 			{
 				//切换为MinesweeperScene场景
 				std::cout << "Computer: Minesweeper" << std::endl;	//调试文本
+
 				auto scene6 = gcnew Scene;	//新建场景
 				MinesweeperScene* minesweeperscene = gcnew MinesweeperScene;	//初始化场景
 				scene6->addChild(minesweeperscene);	//添加场景
@@ -70,6 +77,7 @@ public:
 					&& 100 <= Input::getMouseY() && Input::getMouseY() <= 290)) //如果鼠标坐标满足窗户区域
 			{
 				std::cout << "OutsideScene" << std::endl;	//调试文本
+
 				auto scene9 = gcnew Scene;	//新建场景
 				OutsideScene* outsidescene = gcnew OutsideScene;	//初始化场景
 				scene9->addChild(outsidescene);	//添加场景
@@ -80,6 +88,7 @@ public:
 				&& 158 <= Input::getMouseY() && Input::getMouseY() <= 315)	//如果鼠标坐标满足门区域
 			{
 				std::cout << "FurtherClassroomScene" << std::endl;	//调试文本
+
 				auto scene11 = gcnew Scene;	//新建场景
 				FurtherRoomScene* furtherroomscene = gcnew FurtherRoomScene;	//初始化场景
 				scene11->addChild(furtherroomscene);	//添加场景

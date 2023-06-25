@@ -1,7 +1,7 @@
 #pragma once
 #include<easy2d/easy2d.h>
-using namespace easy2d;
 
+using namespace easy2d;
 class AchievementNotice : public Text
 {
 protected:
@@ -19,10 +19,12 @@ public:
 		this->addChild(achievement);	//添加子节点
 
 		//字体动画
+		achievement->setOpacity(0.0f);	//透明度
 		auto seq = gcnew Sequence;	//顺序执行动作
-		auto delay = gcnew Delay(1.0f);	//停留
+		auto fadein = gcnew FadeIn(1.25f);	//淡入
+		auto delay = gcnew Delay(0.5f);	//停留
 		auto fadeout = gcnew FadeOut(1.25f);	//淡出动作
-		seq->add({ delay, fadeout });	//结合顺序动作
+		seq->add({ fadein, delay, fadeout });	//结合顺序动作
 		achievement->runAction(seq);	//执行动作
 	}
 };

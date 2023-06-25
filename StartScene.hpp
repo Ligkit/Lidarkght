@@ -1,8 +1,8 @@
 #pragma once
 #include<easy2d/easy2d.h>
 #include"CoverScene.hpp"
-using namespace easy2d;
 
+using namespace easy2d;
 class StartScene : public Sprite
 {
 protected:
@@ -36,14 +36,9 @@ public:
 
 	void isCompleted()	//LOGO场景结束, 切换为封面场景
 	{
-		auto scene1 = gcnew Scene;
-		CoverScene* coverscene = gcnew CoverScene;
-		scene1->addChild(coverscene);
-		SceneManager::enter(scene1);
+		auto scene1 = gcnew Scene;	//定义化场景
+		CoverScene* coverscene = gcnew CoverScene;	//初始化场景
+		scene1->addChild(coverscene);	//添加场景
+		SceneManager::enter(scene1);	//切换场景
 	}
-
-	/*~StartScene()
-	{
-		delete this;
-	}*/
 };

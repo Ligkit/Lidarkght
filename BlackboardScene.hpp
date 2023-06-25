@@ -29,7 +29,11 @@ public:
 		blackboard->setPosX(Window::getWidth() / 2);	//居中X坐标
 		blackboard->setPosY(Window::getHeight() / 2);	//居中Y坐标
 		blackboard->setScale(0.6f);	//缩放
+		blackboard->setOpacity(0.0f);	//透明度
 		this->addChild(blackboard);	//添加子节点
+
+		auto fadein = gcnew FadeIn(1.25f);	//淡入
+		blackboard->runAction(fadein);	//执行动作
 
 		//成就(已优化)
 		AchievementNotice* achievement = gcnew AchievementNotice(L"你发现了黑板");
@@ -49,11 +53,14 @@ public:
 		thanksnotice->setFontSize(40.0f);	//设置字体大小
 		thanksnotice->setPos(390, 290);	//设置坐标
 		thanksnotice->setColor(Color::White);	//设置文字颜色
+		thanksnotice->setOpacity(0.0f);	//透明度
 		this->addChild(thanksnotice);	//添加子节点
+
+		auto fadein2 = gcnew FadeIn(1.25f);	//淡入
 		auto seq = gcnew Sequence;	//顺序执行动作
 		auto delay = gcnew Delay(2.0f);	//停留
 		auto fadeout = gcnew FadeOut(1.f);	//淡出动作
-		seq->add({ delay, fadeout });	//结合顺序动作
+		seq->add({ fadein2, delay, fadeout });	//结合顺序动作
 		thanksnotice->runAction(seq);	//执行动作
 
 		//缓冲, 防止在进入此场景的瞬间鼠标点击的信号仍在而导致在黑板上留下痕迹
@@ -66,7 +73,8 @@ public:
 	{
 		if (Input::isDown(MouseCode::Left))	//如果鼠标点击左键
 		{
-			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;
+			std::cout << Input::getMouseX() << ", " << Input::getMouseY() << std::endl;	//调试文本
+
 			if (55 <= Input::getMouseX() && Input::getMouseX() <= 580
 				&& 75 <= Input::getMouseY() && Input::getMouseY() <= 390) //如果鼠标位置在黑板区域内
 			{
@@ -77,9 +85,10 @@ public:
 				point->setAnchor(0.5f, 0.5f);	//设置锚点
 				point->setPosX(Input::getMouseX());	//设置X坐标 = 鼠标X坐标
 				point->setPosY(Input::getMouseY());	//设置Y坐标 = 鼠标Y坐标
-				point->setWidth(5.0f);	//设置宽度
-				point->setHeight(5.0f);	//设置高度
+				point->setWidth(4.0f);	//设置宽度
+				point->setHeight(4.0f);	//设置高度
 				this->addChild(point);	//添加子节点
+				//point->setName(L"p");
 
 				//待优化==========================================================
 
@@ -89,9 +98,14 @@ public:
 			if (490 <= Input::getMouseX() && Input::getMouseX() <= 549
 				&& 391 <= Input::getMouseY() && Input::getMouseY() <= 405)	//如果鼠标位置在黑板擦区域内
 			{
-				//待开发=========================================================
+				clear();
 			}
 		}
+	}
+
+	void clear()
+	{
+		//this->removeChildren(L"p");
 	}
 
 };

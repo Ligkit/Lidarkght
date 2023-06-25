@@ -47,6 +47,10 @@ public:
 		auto func = std::bind(&CoverScene::displayAbout, this);	//初始化func
 		aboutBtn->setClickFunc(func);	//设置按钮事件
 		this->addChild(aboutBtn);	//添加子节点
+
+		this->setOpacity(0.0f);	//透明度
+		auto fadein = gcnew FadeIn(1.25f);	//淡入
+		this->runAction(fadein);	//执行动作
 	}
 
 	void onUpdate()	//每一帧被调用
@@ -59,6 +63,7 @@ public:
 				|| Input::getMouseY() <= 432 || 469 <= Input::getMouseY())	//如果鼠标不在关于按钮区域
 			{
 				std::cout << "clicked" << std::endl;	//调试文本
+
 				auto scene2 = gcnew Scene;	//新建场景
 				PathScene* pathscene = gcnew PathScene;	//初始化场景
 				scene2->addChild(pathscene);	//添加场景
@@ -69,13 +74,14 @@ public:
 
 		if (Input::isDown(MouseCode::Right))	//如果鼠标点击右键
 		{
-			//待开发=====================================================
+			//NULL
 		}
 	}
 
 	void displayAbout()	//关于
 	{
 		std::cout << "display about" << std::endl;	//调试文本
+
 		if (MessageBox(Window::getHWnd(),
 			L"详细内容请访问:https://github.com/LitStudio-Center/Lidarkght/tree/main#readme\n(点击确定以访问)\n注: 此项目已开源",
 			L"关于Lidarkght",
