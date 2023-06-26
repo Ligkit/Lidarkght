@@ -55,13 +55,14 @@ public:
 		photoframe3->setPosY(Window::getHeight() / 2 + 37);
 
 		photoframe4->crop(Rect(460, 590, 904, 859));	//裁剪
-		photoframe4->setScale(1.3125f);	//缩放
+		photoframe4->setScale(1.5f);	//缩放
 		photoframe4->setAnchor(0.5f, 0.5f);	//设置锚点
-		photoframe4->setPosX(Window::getWidth() / 2 + 100);	//设置坐标
+		photoframe4->setPosX(Window::getWidth() / 2 + 120);	//设置坐标
 		photoframe4->setPosY(Window::getHeight() / 2);
 		
 		photoframe5->crop(Rect(0, 0, 511, 409));	//裁剪
-		photoframe5->setScale(1.2f);	//缩放
+		photoframe5->setScaleX(1.32f);	//缩放
+		photoframe5->setScaleY(1.4f);
 		photoframe5->setAnchor(0.5f, 0.5f);	//设置锚点
 		photoframe5->setPosX(Window::getWidth() / 2 + 12);	//设置坐标
 		photoframe5->setPosY(Window::getHeight() / 2 - 70);
@@ -73,24 +74,26 @@ public:
 		photo1->setPosY(photoframe1->getPosY() + 70);
 
 		photo2->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo2->setScaleY(0.6f);	//缩放
-		photo2->setScaleX(0.52f);
-		photo2->setPosX(photoframe2->getPosX() - 80);	//设置坐标
+		photo2->setScaleY(1.1f);	//缩放
+		photo2->setScaleX(1.3f);
+		photo2->setPosX(photoframe2->getPosX() - 100);	//设置坐标
 		photo2->setPosY(photoframe2->getPosY() + 65);
 
 		photo3->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo3->setScale(1.5f);	//缩放
-		photo3->setPosX(photoframe3->getPosX() - 10);	//设置坐标
-		photo3->setPosY(photoframe3->getPosY() + 70);
+		photo3->setScaleX(0.5f);	//缩放
+		photo3->setScaleY(0.56f);
+		photo3->setPosX(photoframe3->getPosX() - 57);	//设置坐标
+		photo3->setPosY(photoframe3->getPosY() - 40);
 
 		photo4->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo4->setScale(1.5f);	//缩放
-		photo4->setPosX(photoframe4->getPosX() - 10);	//设置坐标
-		photo4->setPosY(photoframe4->getPosY() + 70);
+		photo4->setScale(0.58f);	//缩放
+		photo4->setPosX(photoframe4->getPosX() - 120);	//设置坐标
+		photo4->setPosY(photoframe4->getPosY() - 5);
 
 		photo5->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo5->setScale(1.5f);	//缩放
-		photo5->setPosX(photoframe5->getPosX() - 10);	//设置坐标
+		photo5->setScaleY(0.75f);	//缩放
+		photo5->setScaleX(0.72f);
+		photo5->setPosX(photoframe5->getPosX() - 5);	//设置坐标
 		photo5->setPosY(photoframe5->getPosY() + 70);
 #endif
 

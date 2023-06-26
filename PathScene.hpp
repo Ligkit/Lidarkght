@@ -197,30 +197,31 @@ public:
 		this->addChild(photo1Btn);
 
 		photo2->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo2->setScaleY(0.22f);	//缩放
-		photo2->setScaleX(0.15f);
+		photo2->setScaleY(0.32f);	//缩放
+		photo2->setScaleX(0.38f);
 		photo2->setPosX(photo2Btn->getPosX() + 62);	//坐标
-		photo2->setPosY(photo2Btn->getPosY() + 110);
+		photo2->setPosY(photo2Btn->getPosY() + 108);
 		this->addChild(photo2);	//添加子节点
 		this->addChild(photo2Btn);
 
 		photo3->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo3->setScale(0.35f);	//缩放
-		photo3->setPosX(photo3Btn->getPosX() + 70);	//坐标
-		photo3->setPosY(photo3Btn->getPosY() + 80);
+		photo3->setScaleX(0.15f);	//缩放
+		photo3->setScaleY(0.17f);
+		photo3->setPosX(photo3Btn->getPosX() + 62);	//坐标
+		photo3->setPosY(photo3Btn->getPosY() + 82);
 		this->addChild(photo3);	//添加子节点
 		this->addChild(photo3Btn);
 
 		photo4->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo4->setScale(0.35f);	//缩放
+		photo4->setScale(0.15f);	//缩放
 		photo4->setPosX(photo4Btn->getPosX() + 70);	//坐标
-		photo4->setPosY(photo4Btn->getPosY() + 80);
+		photo4->setPosY(photo4Btn->getPosY() + 70);
 		this->addChild(photo4);	//添加子节点
 		this->addChild(photo4Btn);
 
 		photo5->setAnchor(0.5f, 0.5f);	//设置锚点
-		photo5->setScale(0.35f);	//缩放
-		photo5->setPosX(photo5Btn->getPosX() + 70);	//坐标
+		photo5->setScale(0.16f);	//缩放
+		photo5->setPosX(photo5Btn->getPosX() + 75);	//坐标
 		photo5->setPosY(photo5Btn->getPosY() + 80);
 		this->addChild(photo5);	//添加子节点
 		this->addChild(photo5Btn);
@@ -239,7 +240,7 @@ public:
 		this->addChild(plant1);	//添加子节点
 
 		plant2->setAnchor(0.5f, 0.5f);	//设置锚点
-		plant2->setScale(0.7f);	//缩放
+		plant2->setScale(0.2f);	//缩放
 		plant2->setPos(1575, 258);	//坐标
 		this->addChild(plant2);	//添加子节点
 
